@@ -17,15 +17,13 @@
             box-sizing: border-box;
         }
         body {
-            /* Latar belakang luar cokelat arang tua/sepia gelap */
-            background-color: #231C18;
-            color: #E8DAC8; /* Teks Krem Kertas Perkamen Tua */
+            background-color: #231C18; /* Latar luar cokelat arang tua */
+            color: #E8DAC8; /* Teks Krem Perkamen */
             font-family: 'Karla', Helvetica, sans-serif; 
             line-height: 1.6;
             padding: 3rem 1rem;
         }
         
-        /* Font Klasik untuk Judul */
         h1, h2, .artifact-number {
             font-family: 'Playfair Display', serif;
             font-weight: 800;
@@ -43,17 +41,15 @@
             letter-spacing: 0.15em;
             margin-bottom: 1.5rem;
             display: block;
-            color: #C29B7D; /* Krem kecokelatan yang lebih kalem */
+            color: #C29B7D; 
         }
 
         /* Main Container */
         .portfolio-wrapper {
             max-width: 950px; 
             margin: 0 auto;
-            background-color: #732C22; /* Merah bata tua (Aged Terracotta) */
-            /* Garis diubah menjadi 1px dan warna perunggu pudar agar tidak mencolok */
-            border: 1px solid #A48369; 
-            /* Bayangan diperhalus dan warnanya disesuaikan dengan background luar */
+            background-color: #732C22; /* Merah bata tua */
+            border: 1px solid #A48369; /* Garis cokelat perunggu pudar */
             box-shadow: 8px 8px 0px rgba(20, 15, 12, 0.9); 
         }
 
@@ -68,7 +64,7 @@
             font-size: 4.2rem; 
             font-style: italic;
             color: #E8DAC8;
-            font-weight: 500; /* Sedikit ditipiskan agar lebih klasik */
+            font-weight: 500; 
         }
         .header-ornament {
             font-family: 'Karla', sans-serif;
@@ -97,37 +93,28 @@
             justify-content: center;
         }
         
-        /* Layout untuk 2 Gambar */
+        /* Layout untuk 1 Gambar Utuh */
         .image-box {
             border-left: 1px solid #A48369;
             background-color: #1A1512; 
-            display: flex;
-            flex-direction: column; 
-        }
-        .image-wrapper {
-            flex: 1; 
-            width: 100%;
-            overflow: hidden; 
+            overflow: hidden; /* Mencegah gambar keluar batas saat membesar */
             position: relative;
         }
-        .image-wrapper:first-child {
-            border-bottom: 1px solid #A48369; 
-        }
-        .image-wrapper img {
+        .image-box img {
             cursor: zoom-in;
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: all 0.7s ease; 
             display: block;
-            /* Efek Vintage: Sedikit sepia, sedikit redup */
             opacity: 0.85; 
+            /* Efek sepia historis */
             filter: sepia(30%) grayscale(15%) contrast(105%); 
         }
-        .image-wrapper:hover img {
+        .image-box:hover img {
             transform: scale(1.05); 
             opacity: 1;
-            /* Efek hilang saat disentuh */
+            /* Warna kembali normal saat di-hover */
             filter: sepia(0%) grayscale(0%) contrast(100%);
         }
 
@@ -143,16 +130,15 @@
         .art-2 .image-box {
             border-left: none;
             border-right: 1px solid #A48369;
-            order: -1; 
+            /* Kita tidak lagi memerlukan order: -1 karena urutan HTML sudah benar */
         }
         
-        /* Artefak 3 - Pembalikan Warna */
         .art-3 .content-box {
-            background-color: #231C18; /* Latar gelap senada dengan background luar */
+            background-color: #231C18; 
             color: #E8DAC8;
         }
         .art-3 .artifact-number {
-            color: #732C22; /* Angka merah bata tua */
+            color: #732C22; 
         }
 
         /* Teks Penjelasan */
@@ -169,22 +155,22 @@
             font-weight: 400;
         }
         
-        /* Huruf Pertama (Drop Cap) Klasik */
+        /* Drop Cap Klasik */
         .description p:first-of-type::first-letter {
             font-family: 'Playfair Display', serif;
             float: left;
             font-size: 4rem;
             line-height: 0.8;
             margin-right: 0.15em;
-            color: #1A1512; /* Huruf awal cokelat sangat gelap */
+            color: #1A1512; 
             font-style: italic;
             font-weight: 500;
         }
         .art-3 .description p:first-of-type::first-letter {
-            color: #732C22; /* Huruf awal merah bata tua */
+            color: #732C22; 
         }
 
-        /* Styles Lightbox */
+        /* Styles Lightbox (Modal) */
         .modal {
             display: none; 
             position: fixed; 
@@ -205,7 +191,7 @@
             max-width: 90%;
             max-height: 85vh;
             object-fit: contain;
-            border: 2px solid #A48369; /* Bingkai modal diperhalus */
+            border: 2px solid #A48369; 
             box-shadow: 10px 10px 0px rgba(0,0,0,0.5); 
             animation: fadeIn 0.5s ease; 
         }
@@ -237,7 +223,7 @@
             .image-box {
                 border-left: none;
                 border-top: 1px solid #A48369;
-                height: 450px;
+                height: 400px;
             }
             .art-2 .image-box {
                 border-right: none;
@@ -266,41 +252,32 @@
         <article class="artifact art-1">
             <div class="content-box">
                 <div class="artifact-number">No. 1</div>
-                <h2>Peta Jalur Rempah</h2>
-                <span class="label-text">Maritim Nusantara / Abad ke-16</span>
+                <h2>Pelana Kuda Kyai Gentayu</h2>
+                <span class="label-text">Benda Pusaka / 1825–1830</span>
                 
                 <div class="description">
-                    <p>Artefak pertama ini menampilkan rute perdagangan maritim nusantara yang menjadi pusat perhatian dunia pada masanya. Jalur rempah bukan sekadar rute ekonomi, melainkan jembatan pertukaran budaya yang membentuk identitas bangsa.</p>
-                    <p>Dokumen visual ini merekam bagaimana pelabuhan-pelabuhan strategis di kepulauan Indonesia menjadi titik temu para pedagang dari berbagai benua, jauh sebelum era modernisasi menguasai lautan.</p>
+                    <p>Artefak ini merupakan pelana kuda milik Kyai Gentayu, kuda tunggangan kesayangan Pangeran Diponegoro. Pelana ini menjadi saksi bisu ketangguhan dan mobilitas sang pangeran saat memimpin Perang Jawa (De Java Oorlog) melawan pemerintah kolonial Hindia Belanda.</p>
+                    <p>Dibuat dengan rajutan material tradisional yang kokoh, pelana ini digunakan secara intensif sepanjang kampanye taktik perang gerilya dari tahun 1825, hingga akhirnya disita oleh pasukan Belanda saat masa-masa akhir perang pada tahun 1830.</p>
                 </div>
             </div>
             <div class="image-box">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/800/400?random=40" alt="Detail 1A" class="zoomable-image">
-                </div>
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/800/400?random=41" alt="Detail 1B" class="zoomable-image">
-                </div>
+                <img src="images/images1.jpeg" alt="Pelana Kuda Kyai Gentayu" class="zoomable-image">
             </div>
         </article>
 
         <article class="artifact art-2">
+            <div class="image-box">
+                <img src="images/images2.jpeg" alt="Keris Naga Siluman" class="zoomable-image">
+            </div>
+            
             <div class="content-box">
                 <div class="artifact-number">No. 2</div>
-                <h2>Koin Dagang VOC</h2>
-                <span class="label-text">Sistem Ekonomi / Kolonial Belanda</span>
+                <h2>Keris Naga Siluman</h2>
+                <span class="label-text">Simbol Legitimasi / 28 Maret 1830</span>
                 
                 <div class="description">
-                    <p>Koleksi kedua menghadirkan mata uang yang pernah digunakan oleh kongsi dagang VOC. Koin-koin ini merupakan saksi bisu dari monopoli perdagangan rempah dan dinamika ekonomi yang terjadi selama masa penjajahan.</p>
-                    <p>Mempelajari fisik dan distribusi koin ini memberikan kita wawasan mendalam mengenai bagaimana sebuah korporasi masa lalu mampu mempengaruhi struktur sosial dan kesejahteraan masyarakat lokal pada zaman tersebut.</p>
-                </div>
-            </div>
-            <div class="image-box">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/800/400?random=42" alt="Detail 2A" class="zoomable-image">
-                </div>
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/800/400?random=43" alt="Detail 2B" class="zoomable-image">
+                    <p>Artefak ini berupa keris pusaka kebesaran yang selalu diselipkan di pinggang Pangeran Diponegoro. Bagi masyarakat Jawa, keris bukan sekadar senjata tajam, melainkan simbol legitimasi, karisma, dan kepemimpinan spiritual sang pangeran di mata para pengikut setianya.</p>
+                    <p>Keris ini terpaksa diserahkan kepada Jenderal De Kock saat peristiwa penangkapan Pangeran Diponegoro melalui jebakan perundingan di Magelang pada tanggal 28 Maret 1830, sebuah momen tragis yang secara resmi menandai berakhirnya Perang Jawa.</p>
                 </div>
             </div>
         </article>
@@ -308,21 +285,16 @@
         <article class="artifact art-3">
             <div class="content-box">
                 <div class="artifact-number">No. 3</div>
-                <h2>Naskah Kuno Sunda</h2>
-                <span class="label-text">Literatur / Aksara Tradisional</span>
+                <h2>Tombak Kyai Rondhan</h2>
+                <span class="label-text">Senjata Taktis / 11 November 1829</span>
                 
                 <div class="description">
-                    <p>Artefak terakhir menampilkan warisan literatur yang ditulis menggunakan aksara Sunda kuno. Naskah ini menyimpan catatan berharga mengenai tradisi, sistem kepercayaan, serta struktur masyarakat tatar Pasundan di masa lampau.</p>
-                    <p>Pemeliharaan naskah ini sangat krusial, tidak hanya sebagai objek linguistik, tetapi juga sebagai jendela otentik untuk memahami kearifan lokal yang mendasari etika dan nilai budaya yang masih relevan hingga saat ini.</p>
+                    <p>Artefak ini adalah Tombak pusaka Kyai Rondhan, salah satu senjata pendamping utama yang digunakan oleh Pangeran Diponegoro. Mata tombak ini tidak hanya berfungsi sebagai senjata fisik di medan pertempuran, tetapi juga melambangkan perlawanan spiritual rakyat Jawa.</p>
+                    <p>Pusaka bersejarah ini jatuh ke tangan pasukan Belanda setelah sebuah peristiwa penyergapan yang sengit di kawasan pegunungan pada tanggal 11 November 1829, sebelum akhirnya berhasil direpatriasi (dikembalikan) ke pangkuan Ibu Pertiwi.</p>
                 </div>
             </div>
             <div class="image-box">
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/800/400?random=44" alt="Detail 3A" class="zoomable-image">
-                </div>
-                <div class="image-wrapper">
-                    <img src="https://picsum.photos/800/400?random=45" alt="Detail 3B" class="zoomable-image">
-                </div>
+                <img src="images/images3.jpeg" alt="Tombak Kyai Rondhan" class="zoomable-image">
             </div>
         </article>
     </div>
