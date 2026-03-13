@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Artefak Sejarah Di Museum Nasional</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,800;1,500&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styles & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* Latar belakang luar cokelat arang tua/sepia gelap */
+            background-color: #231C18;
+            color: #E8DAC8; /* Teks Krem Kertas Perkamen Tua */
+            font-family: 'Karla', Helvetica, sans-serif; 
+            line-height: 1.6;
+            padding: 3rem 1rem;
+        }
+        
+        /* Font Klasik untuk Judul */
+        h1, h2, .artifact-number {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .label-text {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            display: block;
+            color: #C29B7D; /* Krem kecokelatan yang lebih kalem */
+        }
+
+        /* Main Container */
+        .portfolio-wrapper {
+            max-width: 950px; 
+            margin: 0 auto;
+            background-color: #732C22; /* Merah bata tua (Aged Terracotta) */
+            /* Garis diubah menjadi 1px dan warna perunggu pudar agar tidak mencolok */
+            border: 1px solid #A48369; 
+            /* Bayangan diperhalus dan warnanya disesuaikan dengan background luar */
+            box-shadow: 8px 8px 0px rgba(20, 15, 12, 0.9); 
+        }
+
+        /* Header */
+        .site-header {
+            padding: 4.5rem 2rem;
+            border-bottom: 1px solid #A48369;
+            text-align: center;
+            background-color: #732C22;
+        }
+        .site-header h1 {
+            font-size: 4.2rem; 
+            font-style: italic;
+            color: #E8DAC8;
+            font-weight: 500; /* Sedikit ditipiskan agar lebih klasik */
+        }
+        .header-ornament {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 1.5rem;
+            display: block;
+            color: #C29B7D;
+        }
+
+        /* Shared Artifact Styles */
+        .artifact {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr; 
+            border-bottom: 1px solid #A48369;
+            min-height: 500px; 
+        }
+        .artifact:last-child {
+            border-bottom: none;
+        }
+        .content-box {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Layout untuk 2 Gambar */
+        .image-box {
+            border-left: 1px solid #A48369;
+            background-color: #1A1512; 
+            display: flex;
+            flex-direction: column; 
+        }
+        .image-wrapper {
+            flex: 1; 
+            width: 100%;
+            overflow: hidden; 
+            position: relative;
+        }
+        .image-wrapper:first-child {
+            border-bottom: 1px solid #A48369; 
+        }
+        .image-wrapper img {
+            cursor: zoom-in;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.7s ease; 
+            display: block;
+            /* Efek Vintage: Sedikit sepia, sedikit redup */
+            opacity: 0.85; 
+            filter: sepia(30%) grayscale(15%) contrast(105%); 
+        }
+        .image-wrapper:hover img {
+            transform: scale(1.05); 
+            opacity: 1;
+            /* Efek hilang saat disentuh */
+            filter: sepia(0%) grayscale(0%) contrast(100%);
+        }
+
+        .artifact-number {
+            font-size: 4rem;
+            color: #E8DAC8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        /* Specific Artifact Layouts */
+        .art-2 .image-box {
+            border-left: none;
+            border-right: 1px solid #A48369;
+            order: -1; 
+        }
+        
+        /* Artefak 3 - Pembalikan Warna */
+        .art-3 .content-box {
+            background-color: #231C18; /* Latar gelap senada dengan background luar */
+            color: #E8DAC8;
+        }
+        .art-3 .artifact-number {
+            color: #732C22; /* Angka merah bata tua */
+        }
+
+        /* Teks Penjelasan */
+        .description {
+            margin-top: 1.5rem;
+            max-width: 100%;
+        }
+        .description p {
+            font-size: 1.05rem; 
+            line-height: 1.75;
+            color: #E8DAC8; 
+            margin-bottom: 1.2rem; 
+            text-align: justify; 
+            font-weight: 400;
+        }
+        
+        /* Huruf Pertama (Drop Cap) Klasik */
+        .description p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            float: left;
+            font-size: 4rem;
+            line-height: 0.8;
+            margin-right: 0.15em;
+            color: #1A1512; /* Huruf awal cokelat sangat gelap */
+            font-style: italic;
+            font-weight: 500;
+        }
+        .art-3 .description p:first-of-type::first-letter {
+            color: #732C22; /* Huruf awal merah bata tua */
+        }
+
+        /* Styles Lightbox */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 50px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(26, 21, 18, 0.95); 
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 85vh;
+            object-fit: contain;
+            border: 2px solid #A48369; /* Bingkai modal diperhalus */
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.5); 
+            animation: fadeIn 0.5s ease; 
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(15px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #E8DAC8;
+            font-family: 'Karla', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #C29B7D;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .artifact {
+                grid-template-columns: 1fr;
+            }
+            .image-box {
+                border-left: none;
+                border-top: 1px solid #A48369;
+                height: 450px;
+            }
+            .art-2 .image-box {
+                border-right: none;
+                order: 0; 
+            }
+            .site-header h1 {
+                font-size: 2.5rem;
+            }
+            .modal-content {
+                width: 95%;
+            }
+            .content-box {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portfolio-wrapper">
+        <header class="site-header">
+            <span class="header-ornament">Koleksi Kuratorial</span>
+            <h1>3 Artefak Sejarah<br>Di Museum Nasional</h1>
+        </header>
+
+        <article class="artifact art-1">
+            <div class="content-box">
+                <div class="artifact-number">No. 1</div>
+                <h2>Peta Jalur Rempah</h2>
+                <span class="label-text">Maritim Nusantara / Abad ke-16</span>
+                
+                <div class="description">
+                    <p>Artefak pertama ini menampilkan rute perdagangan maritim nusantara yang menjadi pusat perhatian dunia pada masanya. Jalur rempah bukan sekadar rute ekonomi, melainkan jembatan pertukaran budaya yang membentuk identitas bangsa.</p>
+                    <p>Dokumen visual ini merekam bagaimana pelabuhan-pelabuhan strategis di kepulauan Indonesia menjadi titik temu para pedagang dari berbagai benua, jauh sebelum era modernisasi menguasai lautan.</p>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/800/400?random=40" alt="Detail 1A" class="zoomable-image">
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/800/400?random=41" alt="Detail 1B" class="zoomable-image">
+                </div>
+            </div>
+        </article>
+
+        <article class="artifact art-2">
+            <div class="content-box">
+                <div class="artifact-number">No. 2</div>
+                <h2>Koin Dagang VOC</h2>
+                <span class="label-text">Sistem Ekonomi / Kolonial Belanda</span>
+                
+                <div class="description">
+                    <p>Koleksi kedua menghadirkan mata uang yang pernah digunakan oleh kongsi dagang VOC. Koin-koin ini merupakan saksi bisu dari monopoli perdagangan rempah dan dinamika ekonomi yang terjadi selama masa penjajahan.</p>
+                    <p>Mempelajari fisik dan distribusi koin ini memberikan kita wawasan mendalam mengenai bagaimana sebuah korporasi masa lalu mampu mempengaruhi struktur sosial dan kesejahteraan masyarakat lokal pada zaman tersebut.</p>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/800/400?random=42" alt="Detail 2A" class="zoomable-image">
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/800/400?random=43" alt="Detail 2B" class="zoomable-image">
+                </div>
+            </div>
+        </article>
+
+        <article class="artifact art-3">
+            <div class="content-box">
+                <div class="artifact-number">No. 3</div>
+                <h2>Naskah Kuno Sunda</h2>
+                <span class="label-text">Literatur / Aksara Tradisional</span>
+                
+                <div class="description">
+                    <p>Artefak terakhir menampilkan warisan literatur yang ditulis menggunakan aksara Sunda kuno. Naskah ini menyimpan catatan berharga mengenai tradisi, sistem kepercayaan, serta struktur masyarakat tatar Pasundan di masa lampau.</p>
+                    <p>Pemeliharaan naskah ini sangat krusial, tidak hanya sebagai objek linguistik, tetapi juga sebagai jendela otentik untuk memahami kearifan lokal yang mendasari etika dan nilai budaya yang masih relevan hingga saat ini.</p>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/800/400?random=44" alt="Detail 3A" class="zoomable-image">
+                </div>
+                <div class="image-wrapper">
+                    <img src="https://picsum.photos/800/400?random=45" alt="Detail 3B" class="zoomable-image">
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">TUTUP [X]</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("img01");
+        const images = document.querySelectorAll('.zoomable-image');
+        
+        images.forEach(img => {
+            img.onclick = function(){
+                modal.style.display = "flex"; 
+                modalImg.src = this.src;      
+            }
+        });
+        
+        const span = document.getElementsByClassName("close")[0];
+        
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
